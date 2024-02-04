@@ -16,7 +16,7 @@ int main(){
 
     
 }*/
-int main(){
+/*int main(){
     int n= 1234; int sum=0;
     int product=1;
     while(n!=0){
@@ -27,5 +27,4 @@ int main(){
     }
     int ans=product-sum;
     return ans;
-}
-
+}*/
