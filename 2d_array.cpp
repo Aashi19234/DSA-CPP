@@ -121,6 +121,7 @@ for(int i=0;i<3;i++){
 // largest row sum-> jis row ka largest sum h vo dedo
 
 cout<<"max row is at index"<< largestrowsum(arr,3,4)<<endl;
+// it will give the index of row which has maximum sum
 
 
 }
