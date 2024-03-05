@@ -1,6 +1,51 @@
 #include<iostream>
 using namespace std;
-bool checkPalindrome(string str,int i,int j){
+void sortarray(int arr[],int n){
+    if(n==0||n==1){
+        return;
+    }
+    // 1 case solved-largest element at right place
+    for(int i=0;i<n-1;i++){
+        if(arr[i]>arr[i+1]){
+            swap(arr[i],arr[i+1]);
+        }
+    }
+    sortarray(arr,n-1);
+}
+
+// bubble sort
+int main(){
+    int arr[5]={2,5,4,1,3};
+    sortarray(arr,5);
+    for(int i=0;i<5;i++){
+        cout<<arr[i]<<" ";
+    }
+}
+
+
+/*int power(int a,int b){
+    if(b==0){
+        return 1;
+    }
+    if(b==1)
+    return a;
+    //recursive call
+    int ans=power(a,b/2);
+    if(b%2==0){
+        return ans*ans;
+    }
+    else{
+        return a*ans*ans;
+    }
+}
+
+int main(){
+    int a,b;
+    cin>>a >> b;
+    int ans=power(a,b);
+    cout<<"Answer is "<<ans<<endl;
+}*/
+/*bool checkPalindrome(string str,int i,int j){
 if(i>j){
     return true;
 }
@@ -20,7 +65,7 @@ int main(){
     else{
         cout<<"its not a palindrome"<<endl;
     }
-}
+}*/
 // recursion for strings
 /*void reverse(string &str,int i,int j){// yaha hmne reference variable lia h kyuki agr hm bs str lenge toh ek copy bnegi and hmare main function m jo value di h usme changes ni hoega
     //base case
