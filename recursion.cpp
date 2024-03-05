@@ -1,9 +1,48 @@
 #include<iostream>
 using namespace std;
+bool checkPalindrome(string str,int i,int j){
+if(i>j){
+    return true;
+}
+if(str[i]!=str[j])
+return false;
+else{
+    return checkPalindrome(str,i+1,j-1);
+}
+}
+int main(){
+    string name="abcde";
+    cout<<endl;
+    bool ispalindrome=checkPalindrome(name,0,name.length()-1);
+    if(ispalindrome){
+        cout<<"its a palindrome"<<endl;
+    }
+    else{
+        cout<<"its not a palindrome"<<endl;
+    }
+}
+// recursion for strings
+/*void reverse(string &str,int i,int j){// yaha hmne reference variable lia h kyuki agr hm bs str lenge toh ek copy bnegi and hmare main function m jo value di h usme changes ni hoega
+    //base case
+    if(i>j){
+        return ;
+    }
+    swap(str[i],str[j]);
+    i++;
+    j--;
+    reverse(str,i,j);
+}
+int main(){
+    string s="aastha";
+    reverse(s,0,s.length()-1);
+    cout<<endl;
+    cout<<s<<endl;
 
+
+}*/
 
 // binary search
-bool binarySearch(int arr[],int s,int e,int k){
+/*bool binarySearch(int arr[],int s,int e,int k){
     //base case
     if(s>e){
         return false;
@@ -26,7 +65,7 @@ int main(){
     int key=15;
     cout<<"present or not" <<" "<<binarySearch(arr,0,4,key)<<endl;;
     return 0;
-}
+}*/
 
 
 /*bool isSorted(int arr[],int size){
