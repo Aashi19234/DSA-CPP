@@ -60,6 +60,10 @@ void insertathead(node*&head,int d){// why we have taken a reference?-> bcoz hme
 }
 void printt(node*&tail){
     node*temp=tail;
+    if(tail==NULL){
+        cout<<"List is empty"<<endl;
+        return;
+    }
     // do-while loop use krenge kyuki vo atleast ek baari execute hoega kyuki single element n print hoega normal loop se
     do{
         cout<<tail->data<<" ";
@@ -67,6 +71,36 @@ void printt(node*&tail){
     }
     while(tail!=temp);
     cout<<endl;
+
+}
+void deleteval(node*&tail,int value){
+    //empty list
+    if(tail==NULL){
+        cout<<"list is empty,please try again!!"<<endl;
+        return;
+    }
+    else{
+        //non-empty
+        //assuming value is present in linked list
+        node*prev=tail;
+        node*curr=prev->next;
+        while(curr->data!=value){
+            prev=curr;
+            curr=curr->next;
+        }
+        prev->next=curr->next;
+        // 1-node linked list
+        if(curr==prev){
+            tail=NULL;
+        }
+        //>2 nodes linked list
+        if(tail==curr){
+            tail=prev;
+        }
+        curr->next=NULL;
+        delete(curr);
+
+    }
 
 }
 
@@ -177,7 +211,9 @@ int main(){
     printt(tail);
     insertnode(tail,3,5);
     printt(tail);
-    insertnode(tail,3,4);
+    //insertnode(tail,3,4);
+    //printt(tail);
+    deleteval(tail,3);
     printt(tail);
 
 
